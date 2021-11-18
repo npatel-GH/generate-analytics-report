@@ -7,15 +7,15 @@ class Mode:
 def load_relevant_data(us_data=True, mode=Mode.CASES):
 	# This can be changed to your local directory (./) for testing purposes
 	#BASE_PATH = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/'
-	BASE_PATH = './data/'
+	BASE_PATH = r"C:\repos\L_D\PDF_report_using_Python\generate-analytics-report\data"
 	if us_data and mode == Mode.CASES:
-		PATH = BASE_PATH + 'time_series_covid19_confirmed_US.csv'
+		PATH = BASE_PATH + r'\time_series_covid19_confirmed_US.csv'
 	elif us_data and mode == Mode.DEATHS:
-		PATH = BASE_PATH + 'time_series_covid19_deaths_US.csv'
+		PATH = BASE_PATH + r'\time_series_covid19_deaths_US.csv'
 	elif not us_data and mode == Mode.CASES:
-		PATH = BASE_PATH + 'time_series_covid19_confirmed_global.csv'
+		PATH = BASE_PATH + r'\time_series_covid19_confirmed_global.csv'
 	elif not us_data and mode == Mode.DEATHS:
-		PATH = BASE_PATH + 'time_series_covid19_deaths_global.csv'
+		PATH = BASE_PATH + r'\time_series_covid19_deaths_global.csv'
 
 	return pd.read_csv(PATH)
 
